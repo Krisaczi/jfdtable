@@ -7,7 +7,6 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>User Table</h1>
         <UserTable />
       </div>
     </Provider>

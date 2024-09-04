@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../store";
 import { fetchUsers } from "../userSlice";
-import "./table.css";
+import style from "./style.module.scss";
 
 const Table: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -24,31 +24,33 @@ const Table: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className={style.container}>
+      <h1 className={style.title}>User Table</h1>
       <input
         type="text"
         placeholder="Search..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        className={style.searchBar}
       />
       {status === "loading" && <p>Loading...</p>}
       {status === "failed" && <p>{error}</p>}
-      <table className="header">
+      <table>
         <thead>
           <tr>
-            <th className="table-headers">Name</th>
-            <th className="table-headers">Username</th>
-            <th className="table-headers">Email</th>
-            <th className="table-headers">Phone</th>
+            <th className={style.tableHeaders}>Name</th>
+            <th className={style.tableHeaders}>Username</th>
+            <th className={style.tableHeaders}>Email</th>
+            <th className={style.tableHeaders}>Phone</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={style.tBody}>
           {filteredUsers.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
+            <tr key={user.id} className={style.tRow}>
+              <td className={style.tCells}>{user.name}</td>
+              <td className={style.tCells}>{user.username}</td>
+              <td className={style.tCells}>{user.email}</td>
+              <td className={style.tCells}>{user.phone}</td>
             </tr>
           ))}
         </tbody>

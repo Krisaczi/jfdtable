@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$primary: #0077ff;
+$dark: #000;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-spacing: 0;
+}
+
+.title {
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.searchBar {
+  margin-bottom: 50px;
+}
+
+.tableHeaders {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tBody {
+  line-height: 30px;
+}
+
+.tRow {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 3px;
+}
+
+.tCells {
+  width: 200px;
+}
+
+.tRow:nth-of-type(even) {
+  background-color: #e1e8e9;
+}
+
+.tRow:hover {
+  background-color: #beb1b1;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20%;
+  border: 0;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba($dark, 0.02);
+  box-shadow: inset 0 -1px 0 rgba($dark, 0.3);
+  color: $dark;
+  transition: all 0.15s ease;
+}
